@@ -5,7 +5,8 @@ class MinStack
     private $stack = [];
     private $minStack = [];
 
-    function push($val) {
+    public function push($val)
+    {
         $this->stack[] = $val;
 
         if (empty($this->minStack) || $val <= end($this->minStack)) {
@@ -15,16 +16,19 @@ class MinStack
         }
     }
 
-    function pop() {
+    public function pop()
+    {
         array_pop($this->stack);
         array_pop($this->minStack);
     }
 
-    function top() {
+    public function top()
+    {
         return end($this->stack);
     }
 
-    function getMin() {
+    public function getMin()
+    {
         return end($this->minStack);
     }
 }

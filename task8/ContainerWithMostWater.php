@@ -2,7 +2,8 @@
 
 class ContainerWithMostWater
 {
-    function maxArea($height) {
+    public function maxArea($height)
+    {
         $maxArea = 0;
         $left = 0;
         $right = count($height) - 1;

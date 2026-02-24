@@ -2,7 +2,7 @@
 
 class GroupAnagrams
 {
-    function groupAnagrams($strs)
+    public function groupAnagrams($strs)
     {
         $result = [];
         for ($i = 0; $i < count($strs); $i++) {

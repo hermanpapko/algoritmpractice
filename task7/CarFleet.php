@@ -2,12 +2,13 @@
 
 class CarFleet
 {
-    function carFleet($target, $position, $speed) {
-        $cars = array_map(function($p, $s) {
+    public function carFleet($target, $position, $speed)
+    {
+        $cars = array_map(function ($p, $s) {
             return ['pos' => $p, 'speed' => $s];
         }, $position, $speed);
 
-        usort($cars, function($a, $b) {
+        usort($cars, function ($a, $b) {
             return $b['pos'] <=> $a['pos'];
         });
 

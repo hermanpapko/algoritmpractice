@@ -2,8 +2,11 @@
 
 class LongestConsecutive
 {
-    function longestConsecutive($nums) {
-        if (empty($nums)) return 0;
+    public function longestConsecutive($nums)
+    {
+        if (empty($nums)) {
+            return 0;
+        }
 
         sort($nums);
         $nums = array_unique($nums);
@@ -12,7 +15,7 @@ class LongestConsecutive
         $current = 1;
 
         for ($i = 0; $i < count($nums) - 1; $i++) {
-            if ($nums[$i+1] == $nums[$i] + 1) {
+            if ($nums[$i + 1] == $nums[$i] + 1) {
                 $current++;
             } else {
                 $longest = max($longest, $current);

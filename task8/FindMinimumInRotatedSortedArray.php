@@ -2,7 +2,8 @@
 
 class FindMinimumInRotatedSortedArray
 {
-    function findMin($nums) {
+    public function findMin($nums)
+    {
         $left = 0;
         $right = count($nums) - 1;
 

@@ -2,7 +2,8 @@
 
 class EvaluateReversePolishNotation
 {
-    function evalRPN($tokens) {
+    public function evalRPN($tokens)
+    {
         $operators = ['+', '-', '*', '/'];
         $stack = [];
         foreach ($tokens as $token) {
@@ -19,7 +20,7 @@ class EvaluateReversePolishNotation
 
                 array_push($stack, $result);
             } else {
-                array_push($stack, (int)$token);
+                array_push($stack, (int) $token);
             }
         }
         return array_pop($stack);
