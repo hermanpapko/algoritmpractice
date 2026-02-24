@@ -29,7 +29,7 @@ class Sort
             for ($i = 1; $i < count($arr); $i++) {
                 if ($arr[$i] <= $pivot) {
                     array_push($less, $arr[$i]);
-                } elseif ($arr[$i] > $pivot) {
+                } else {
                     array_push($greater, $arr[$i]);
                 }
             }
@@ -43,25 +43,23 @@ class Sort
         $result = [];
         $i = 0;
         $j = 0;
+        $leftCount = count($left);
+        $rightCount = count($right);
 
-        while ($i < count($left) && $j < count($right)) {
+        while ($i < $leftCount && $j < $rightCount) {
             if ($left[$i] <= $right[$j]) {
-                $result[] = $left[$i];
-                $i++;
+                $result[] = $left[$i++];
             } else {
-                $result[] = $right[$j];
-                $j++;
+                $result[] = $right[$j++];
             }
         }
 
-        while ($i < count($left)) {
-            $result[] = $left[$i];
-            $i++;
+        while ($i < $leftCount) {
+            $result[] = $left[$i++];
         }
 
-        while ($j < count($right)) {
-            $result[] = $right[$j];
-            $j++;
+        while ($j < $rightCount) {
+            $result[] = $right[$j++];
         }
 
         return $result;
